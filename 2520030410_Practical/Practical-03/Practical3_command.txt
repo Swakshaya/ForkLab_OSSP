@@ -1,0 +1,47 @@
+cat: /proc/4522/status: No such file or directory
+swathi@LAPTOP-RG4JE2PF:~$ swathi@LAPTOP-RG4JE2PF:~$ nano process.c
+swathi@LAPTOP-RG4JE2PF:~$ gcc process.c
+swathi@LAPTOP-RG4JE2PF:~$ ./a.out
+Parent process
+PID: 2288
+Child process
+PID: 2289
+^C
+swathi@LAPTOP-RG4JE2PF:~$ ps -l
+F S   UID     PID    PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+4 S  1000    1024    1022  0  80   0 -  1567 do_wai pts/2    00:00:00 bash
+0 R  1000    2302    1024  0  80   0 -  1798 -      pts/2    00:00:00 ps
+swathi@LAPTOP-RG4JE2PF:~$ top
+top - 17:16:52 up  2:11,  1 user,  load average: 0.04, 0.01, 0.00
+Tasks:  26 total,   1 running,  25 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.
+MiB Mem :   7859.6 total,   7230.9 free,    529.1 used,    252.0 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   7330.5 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+
+      1 root      20   0   24324  15384  11556 S   0.0   0.2   0:01.32
+      2 root      20   0    3180   2208   2072 S   0.0   0.0   0:00.01
+      6 root      20   0    3180   2048   1940 S   0.0   0.0   0:00.00
+     46 root      19  -1   50424  16840  15544 S   0.0   0.2   0:00.43
+     81 systemd+  20   0   22416  14456  11960 S   0.0   0.2   0:00.16
+     90 root      20   0   35328  12320   9272 S   0.0   0.2   0:02.74
+    110 root      20   0    2888   1948   1820 S   0.0   0.0   0:00.07
+    111 root      20   0    4472   3124   2876 S   0.0   0.0   0:00.02
+    112 message+  20   0    8804   5480   4780 S   0.0   0.1   0:00.11
+    118 root      20   0   44096  29772  14632 S   0.0   0.4   0:00.34
+    124 root      20   0   18440   9412   8164 S   0.0   0.1   0:00.13
+    179 syslog    20   0  220548   5940   4632 S   0.0   0.1   0:00.10
+    218 _chrony   20   0   23600  11180   7236 S   0.0   0.1   0:00.10
+    219 root      20   0    5492   2724   2540 S   0.0   0.0   0:00.00
+    228 root      20   0  123460  32592  17980 S   0.0   0.4   0:00.31
+    235 _chrony   20   0   12096   2420   1780 S   0.0   0.0   0:00.00
+    311 root      20   0    8648   5588   4744 S   0.0   0.1   0:00.01
+    373 swathi    20   0   22752  13464  11004 S   0.0   0.2   0:00.20
+    377 swathi    20   0   22916   4108   2104 S   0.0   0.1   0:00.00
+    405 swathi    20   0    6136   5516   3928 S   0.0   0.1   0:00.09
+   1021 root      20   0    3184   1120    980 S   0.0   0.0   0:00.00
+   1022 root      20   0    3200   1260   1108 S   0.0   0.0   0:00.17
+   1024 swathi    20   0    6268   5532   3864 S   0.0   0.1   0:00.31
+   1598 polkitd   20   0  306444   8636   7824 S   0.0   0.1   0:00.11
+   2165 root      20   0 1792044  15224  12560 S   0.0   0.2   0:00.12
+   2314 swathi    20   0    8176   5632   3532 R   0.0   0.1   0:00.00
