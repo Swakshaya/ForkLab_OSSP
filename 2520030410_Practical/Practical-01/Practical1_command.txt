@@ -1,0 +1,105 @@
+swathi@LAPTOP-RG4JE2PF:~$ uname
+Linux
+swathi@LAPTOP-RG4JE2PF:~$ lscpu
+Architecture:                x86_64
+  CPU op-mode(s):            32-bit, 64-bit
+  Address sizes:             39 bits physical, 48 bits virtual
+  Byte Order:                Little Endian
+CPU(s):                      8
+  On-line CPU(s) list:       0-7
+Vendor ID:                   GenuineIntel
+  Model name:                Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
+    CPU family:              6
+    Model:                   165
+    Thread(s) per core:      2
+    Core(s) per socket:      4
+    Socket(s):               1
+    Stepping:                2
+    BogoMIPS:                4992.01
+    Flags:                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr ss
+                             e sse2 ss ht syscall nx pdpe1gb rdtscp lm arch_perfmon rep_good nopl xtopology cpuid tsc_kn
+                             own_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt aes x
+                             save avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhance
+                             d tpr_shadow ept vpid ept_ad fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clfl
+                             ushopt xsaveopt xsavec xgetbv1 xsaves vnmi md_clear flush_l1d arch_capabilities
+Virtualization features:
+  Virtualization:            VT-x
+  Hypervisor vendor:         Microsoft
+  Virtualization type:       full
+Caches (sum of all):
+  L1d:                       128 KiB (4 instances)
+  L1i:                       128 KiB (4 instances)
+  L2:                        1 MiB (4 instances)
+  L3:                        8 MiB (1 instance)
+NUMA:
+  NUMA node(s):              1
+  NUMA node0 CPU(s):         0-7
+Vulnerabilities:
+  Gather data sampling:      Unknown: Dependent on hypervisor status
+  Ghostwrite:                Not affected
+  Indirect target selection: Mitigation; Aligned branch/return thunks
+  Itlb multihit:             KVM: Mitigation: Split huge pages
+  L1tf:                      Not affected
+  Mds:                       Not affected
+  Meltdown:                  Not affected
+  Mmio stale data:           Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+  Old microcode:             Not affected
+  Reg file data sampling:    Not affected
+  Retbleed:                  Mitigation; Enhanced IBRS
+  Spec rstack overflow:      Not affected
+  Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+  Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+  Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI SW lo
+                             op, KVM SW loop
+  Srbds:                     Unknown: Dependent on hypervisor status
+  Tsa:                       Not affected
+  Tsx async abort:           Not affected
+  Vmscape:                   Not affected
+swathi@LAPTOP-RG4JE2PF:~$ lsblk
+NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda    8:0    0 356.9M  1 disk
+sdb    8:16   0 159.4M  1 disk
+sdc    8:32   0     2G  0 disk [SWAP]
+sdd    8:48   0     1T  0 disk /mnt/wslg/distro
+                               /
+swathi@LAPTOP-RG4JE2PF:~$ ps
+    PID TTY          TIME CMD
+   1024 pts/2    00:00:00 bash
+   1183 pts/2    00:00:00 ps
+swathi@LAPTOP-RG4JE2PF:~$ top
+top - 15:46:23 up 40 min,  1 user,  load average: 0.00, 0.00, 0.00
+Tasks:  29 total,   1 running,  28 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7859.6 total,   7202.5 free,    520.2 used,    287.6 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   7339.4 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0   24324  15364  11556 S   0.0   0.2   0:01.19 systemd
+      2 root      20   0    3180   2208   2072 S   0.0   0.0   0:00.01 init-systemd(Ub
+      6 root      20   0    3180   2048   1940 S   0.0   0.0   0:00.00 init
+     46 root      19  -1   50424  16796  15508 S   0.0   0.2   0:00.33 systemd-journal
+     81 systemd+  20   0   22416  14456  11960 S   0.0   0.2   0:00.15 systemd-resolve
+     90 root      20   0   35328  12320   9272 S   0.0   0.2   0:01.17 systemd-udevd
+    110 root      20   0    2888   1948   1820 S   0.0   0.0   0:00.07 chronyd-starter
+    111 root      20   0    4472   3124   2876 S   0.0   0.0   0:00.01 cron
+    112 message+  20   0    8804   5464   4780 S   0.0   0.1   0:00.08 dbus-daemon
+    118 root      20   0   44096  29772  14632 S   0.0   0.4   0:00.34 networkd-dispat
+    124 root      20   0   18440   9412   8164 S   0.0   0.1   0:00.12 systemd-logind
+    179 syslog    20   0  220548   5940   4632 S   0.0   0.1   0:00.09 rsyslogd
+    218 _chrony   20   0   23600  11180   7236 S   0.0   0.1   0:00.08 chronyd
+    219 root      20   0    5492   2724   2540 S   0.0   0.0   0:00.00 agetty
+    228 root      20   0  123460  32592  17980 S   0.0   0.4   0:00.31 unattended-upgr
+    235 _chrony   20   0   12096   2420   1780 S   0.0   0.0   0:00.00 chronyd
+    305 root      20   0    3184   1112    980 S   0.0   0.0   0:00.00 SessionLeader
+    306 root      20   0    3200   1252   1108 S   0.0   0.0   0:00.01 Relay(308)
+    308 swathi    20   0    6268   5536   3864 S   0.0   0.1   0:00.09 bash
+    311 root      20   0    8648   5588   4744 S   0.0   0.1   0:00.01 login
+    373 swathi    20   0   22752  13464  11004 S   0.0   0.2   0:00.20 systemd
+    377 swathi    20   0   22916   4108   2104 S   0.0   0.1   0:00.00 (sd-pam)
+    405 swathi    20   0    6136   5516   3928 S   0.0   0.1   0:00.09 bash
+    659 swathi    20   0    5252   4784   3116 S   0.0   0.1   0:00.00 nano
+    981 root      20   0 1792300  15204  12556 S   0.0   0.2   0:00.04 wsl-pro-service
+   1021 root      20   0    3184   1120    980 S   0.0   0.0   0:00.00 SessionLeader
+   1022 root      20   0    3200   1260   1108 S   0.0   0.0   0:00.03 Relay(1024)
+   1024 swathi    20   0    6268   5532   3864 S   0.0   0.1   0:00.07 bash
+   1193 swathi    20   0    8288   6064   3900 R   0.0   0.1   0:00.04 top
